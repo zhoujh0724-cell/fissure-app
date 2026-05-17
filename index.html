@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="裂隙速判">
+<title>裂隙速判</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/app.css">
+<link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+
+<div class="header">
+  <span style="font-size:20px">🏔️</span>
+  <h1>裂隙速判</h1>
+  <span class="badge">V2.0</span>
+</div>
+
+<div class="stepper" id="stepper">
+  <div class="step active" data-step="0"><span class="num">1</span>加载照片</div>
+  <span class="step-arrow">›</span>
+  <div class="step" data-step="1"><span class="num">2</span>角度校正</div>
+  <span class="step-arrow">›</span>
+  <div class="step" data-step="2"><span class="num">3</span>绘制剖面</div>
+  <span class="step-arrow">›</span>
+  <div class="step" data-step="3"><span class="num">4</span>分析结果</div>
+</div>
+
+<div class="canvas-wrap" id="canvasWrap">
+  <canvas id="mainCanvas"></canvas>
+  <div class="mode-badge" id="modeBadge"></div>
+  <div id="toast"></div>
+  <div class="panel-overlay" id="resultPanel">
+    <div id="resultContent"></div>
+    <button class="close-btn" onclick="closeResult()">关闭报告</button>
+  </div>
+</div>
+
+<div class="toolbar" id="toolbar">
+  <input type="file" id="fileInput" accept="image/*" capture="environment">
+  <button class="btn primary" id="btnLoad">📷 拍照</button>
+  <button class="btn warning" id="btnCorrect" disabled>📐 校正</button>
+  <button class="btn success" id="btnApply" disabled>✓ 应用</button>
+  <button class="btn" id="btnProfile" disabled>✏️ 剖面</button>
+  <button class="btn" id="btnDone" disabled>✓ 完成</button>
+  <button class="btn" id="btnAnalyze" disabled>🔬 分析</button>
+  <button class="btn danger" id="btnReset" disabled>↺ 重置</button>
+</div>
+
+<script src="js/profile.js"></script>
+<script src="js/image.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
